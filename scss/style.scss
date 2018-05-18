@@ -1,0 +1,331 @@
+ul {
+  list-style: none;
+}
+.horizontal {
+  li {
+    display: inline-block;
+  }
+}
+.vertical {
+  li {
+    display: block;
+  }
+}
+h2, h3 {
+  font-weight: bold;
+  text-align: center;
+}
+header {
+  background-color: #fcdb00;
+  margin: 0 auto;
+  padding: 50px 0;
+  @media screen and (max-width: 480px) {
+    padding: 25px 0;
+  }
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    ul {
+      display: flex;
+      justify-content: space-between;
+      padding: 0;
+      margin: 0;
+      @media screen and (max-width: 480px) {
+        display: block;
+        li {
+          display: block;
+          width: 100%;
+          text-align: right;
+        }
+      }
+      a {
+        font-weight: bold;
+        font-size: 22px;
+        @media screen and (max-width: 600px) {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+.top {
+  background-color: #fcdb00;
+  color: #010101;
+  position: relative;
+  h2, h3 {
+    color: #010101;
+    text-align: left;
+    @media screen and (max-width: 768px) {
+      text-align: center;
+    }
+  }
+  p {
+    margin: 30px 0;
+  }
+  .container {
+    position: relative;
+    height: 650px;
+    @media screen and (max-width: 768px) {
+      height: 450px;
+    }
+    img {
+      float: right;
+    }
+  }
+  input {
+    display: none;
+  }
+  .slider {
+    overflow: hidden;
+    position: relative;
+    width: inherit;
+    padding-bottom: 50px;
+    height: 550px;
+    @media screen and (max-width: 768px) {
+      height: 350px;
+      text-align: center;
+    }
+    #links {
+      .link {
+        display: inline-block;
+        margin-right: 35px;
+        cursor: pointer;
+        visibility: hidden;
+        &:hover {
+          color: #2d2d2d;
+        }
+
+        animation-name: slideRight;
+        -webkit-animation-name: slideRight;
+
+        animation-duration: 0.3s;
+        -webkit-animation-duration: 0.3s;
+
+        animation-timing-function: ease;
+        -webkit-animation-timing-function: ease;
+
+        animation-fill-mode: forwards;
+        -webkit-animation-fill-mode: forwards;
+        &:nth-child(2) {
+          animation-delay: 0.2s;
+        }
+        &:last-child {
+          animation-delay: 0.4s;
+          margin: 0;
+        }
+        @keyframes slideRight {
+          0% {
+            transform: translateX(150%);
+            visibility: hidden;
+          }
+          20% {
+            transform: translateX(80%);
+            visibility: hidden;
+          }
+          40% {
+            transform: translateX(60%);
+            visibility: visible;
+          }
+          60%{
+            transform: translateX(40%);
+            visibility: visible;
+          }
+          80% {
+            transform: translateX(20%);
+            visibility: visible;
+          }
+          100% {
+            transform: translateX(0%);
+            visibility: visible;
+          }
+        }
+
+        @-webkit-keyframes slideRight {
+          0% {
+            transform: translateX(150%);
+            visibility: hidden;
+          }
+          20% {
+            transform: translateX(80%);
+            visibility: hidden;
+          }
+          40% {
+            transform: translateX(60%);
+            visibility: visible;
+          }
+          60%{
+            transform: translateX(40%);
+            visibility: visible;
+          }
+          80% {
+            transform: translateX(20%);
+            visibility: visible;
+          }
+          100% {
+            transform: translateX(0%);
+            visibility: visible;
+          }
+        }
+      }
+    }
+    #hidden-link {
+      display: none;
+      a {
+        padding: 15px 25px;
+        border: 2px solid black;
+        border-radius: 6px;
+        color: #2d2d2d;
+
+        i {
+          vertical-align: middle;
+          margin-left: 25px;
+        }
+        &:hover {
+          background-color: #010101;
+          color: white;
+        }
+      }
+    }
+    .invisible {
+      display: none;
+    }
+  }
+  .slides {
+    height: inherit;
+    opacity: 0;
+    position: absolute;
+    width: inherit;
+    z-index: 0;
+    }
+  .control {
+    position: absolute;
+    left: 50%;
+    width: auto;
+    margin-left: -26.5px;
+    margin-top: 30px;
+  }
+  label {
+    cursor: pointer;
+    display: inline-block;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: #feed80;
+    bottom: 50px;
+  }
+  #point1:checked ~ .control label:nth-of-type(1),
+  #point2:checked ~ .control label:nth-of-type(2),
+  #point3:checked ~ .control label:nth-of-type(3) {
+    background: white;
+  }
+  #point1:checked ~ .slider > .slide1,
+  #point2:checked ~ .slider > .slide2,
+  #point3:checked ~ .slider > .slide3 {
+    opacity: 1;
+    z-index: 1;
+  }
+}
+.info {
+  padding: 115px 0;
+  .works {
+    margin-top: 90px;
+    @media screen and (max-width: 768px) {
+      margin-top: 50px;
+    }
+    .work {
+      margin-bottom: 75px;
+      @media screen and (max-width: 768px) {
+        margin-bottom: 30px;
+      }
+    }
+    .icon {
+      padding: 11px;
+      text-align: center;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    padding: 50px 0;
+  }
+}
+.contact {
+  background-color: #010101;
+  padding: 85px 0;
+  h2 {
+    color: #fcdb00;
+  };
+  h3 {
+    color: #898989;
+  };
+  form {
+    width: 100%;
+    padding: 0;
+    margin: 40px 0;
+    input {
+      width: 78%;
+      margin: 0 0 25px;
+      padding: 10px 15px;
+      outline: none;
+      border: none;
+      border-radius: 3px;
+      @media screen and (max-width: 480px) {
+        width: 100%;
+      }
+    }
+    button {
+      @extend input;
+      width: 20%;
+      float: right;
+      background-color: #fcdb00;
+      color: black;
+      font-weight: bold;
+      &:hover {
+        background-color: #feed80;
+      }
+      @media screen and (max-width: 480px) {
+        padding: 10px 5px;
+        width: 100%;
+      }
+    }
+  };
+  .links {
+    display: flex;
+    justify-content: space-between;
+    a {
+      color: #fcdb00;
+      width: 45px;
+      &:hover {
+        color: #feed80;
+      }
+    }
+  }
+}
+footer {
+  background-color: #010101;
+  color: white;
+  .adress {
+    text-align: center;
+    margin-bottom: 25px;
+  }
+  ul.horizontal {
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    justify-content: space-between;
+    padding: 0;
+    @media screen and (max-width: 768px) {
+      flex-wrap: wrap;
+    }
+    li {
+      @media screen and (max-width: 480px) {
+        width: 50%;
+        margin: 0 auto;
+        text-align: center;
+      }
+      ul {
+        margin: 0 25px 25px 0;
+        padding: 0;
+      }
+    }
+  }
+}
